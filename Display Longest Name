@@ -1,0 +1,18 @@
+class Solution {
+  public:
+    string longest(int n, vector<string> &names) {
+        // code here
+        int index=0,max_len=0;
+        string str;
+        for(int i=0;i<n;i++)
+        {
+            str=names[i];
+            if(max_len < str.length())
+            {
+                max_len = str.length();
+                index=i;
+            }
+        }
+        return names[index];
+    }
+}; 
