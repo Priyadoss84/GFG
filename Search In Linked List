@@ -1,0 +1,23 @@
+bool searchLinkedList(Node *head, int x)
+{
+    //Your code here
+    if(head == NULL)
+        return false;
+    else if(head->next==NULL)
+    {
+        if(head->data==x)
+            return true;
+        else
+            return false;
+    }
+    else
+    {
+        while(head->next!=NULL)
+        {
+            if(head->data == x)
+                return true;
+            head=head->next;
+        }
+        return false;
+    }
+}
