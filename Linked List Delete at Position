@@ -1,0 +1,35 @@
+Node * deleteAtPosition(Node *head,int pos)
+{
+    //Your code here
+    Node* cur=head;
+    int n=1;
+    if(pos==1)
+    {
+        Node* tmp=cur;
+        cur=cur->next;
+        delete tmp;
+        head=cur;
+        return head;
+    }
+    while(cur!=NULL)
+    {
+        if(n+1==pos)
+        {
+            if(cur->next->next!=NULL)
+            {
+                Node* tmp=cur->next;
+                cur->next=cur->next->next;
+                delete tmp;
+            }
+            else
+            {
+                Node* tmp=cur->next;
+                cur->next=NULL;
+                delete tmp;
+            }
+            return head;
+        }
+        cur=cur->next;
+        n=n+1;
+    }
+}
