@@ -1,0 +1,21 @@
+bool isSorted(Node * head)
+{
+    //Your code here
+    Node* cur=head;
+    if(head->next==NULL)
+        return 1;
+    while(cur->data >= cur->next->data)
+    {
+        if(cur->next->next==NULL)
+            return 1;
+        cur=cur->next;
+    }
+    cur=head;
+    while(cur->data <= cur->next->data)
+    {
+        if(cur->next->next==NULL)
+            return 1;
+        cur=cur->next;
+    }
+    return 0;
+}
